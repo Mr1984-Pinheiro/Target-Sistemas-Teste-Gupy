@@ -1,2 +1,2 @@
 # Target-Sistemas-Teste-Gupy
-Desafio Target é fase de teste para avaliar habilidades técnicas  dos candidatos. 
+Desafio Target é a fase de teste para avaliar habilidades técnicas  dos candidatos. 
