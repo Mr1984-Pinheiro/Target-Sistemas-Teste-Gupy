@@ -119,13 +119,21 @@ const data = [
 	{
 		"dia": 30,
 		"valor": 8414.61
-	},
-	{
-		"dia": 30,
-		"valor": 108414.61
 	}
 ]
 
+const maxValue = data.reduce(function(prev, current) { 	
+	return prev.valor > current.valor ? prev : current; 
+});
+
+const minValue = data.reduce(function(prev, current) { 		
+		return prev.valor < current.valor ? prev : current;		 
+});
+
+console.log(maxValue.valor);
+console.log(minValue.valor);
+
+/*
 let dias = data.map(dia => dia.dia)
 let valores = data.map(valores => valores.valor)
 
@@ -143,3 +151,22 @@ for (let i= 0; i < valores.length; i++){
 }
 
 console.log(maiorValor);
+
+*/
+/*
+let valores = data.map(valores => valores.valor)
+
+let posicao_maior = 0
+let posicao_menor = 0
+
+for (let i =1; i < valores.length; i++ ) {
+	if (valores[i] > valores[posicao_maior]) {
+		posicao_maior = i
+	}else if (valores[i] < valores[posicao_menor]) {
+		posicao_menor = i 
+	}
+}
+
+console.log(`Maior elemento: ${valores[posicao_maior]} (i: ${posicao_maior}) `)
+console.log(`Menor elemento: ${valores[posicao_menor]} (i: ${posicao_menor}) `)
+*/
