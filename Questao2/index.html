@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Target</title>
+</head>
+<body>
+    <!--2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+
+IMPORTANTE:
+Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;-->
+    
+<div class="container">
+        <h1>Sequência de Fibonacci</h1>
+
+        <section>
+            <p>Dentre todos os mistérios da Matemática, a <a href="https://mundoeducacao.uol.com.br/matematica/sequencia-fibonacci.htm#:~:text=1%2C%201%2C%202%2C%203,um%20toque%20de%20l%C3%B3gica%20matem%C3%A1tica.">sequência de Fibonacci</a> 
+                 é considerada uma das mais fascinantes descobertas da história. 
+                 A sequência de números proposta pelo matemático italiano 
+                 Leonardo de Pisa, mais conhecido como Fibonacci, possui o
+                  numeral 1 como o primeiro e o segundo termo da ordem, e os
+                   elementos seguintes são originados pela soma de seus dois
+                    antecessores, 
+                    <br>
+                    <br>
+                    observe:
+
+                1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 
+                610, 987, 1597, 2584, 4181...
+                <br>
+                <br>
+                Analisada como uma sequência numérica, ela não passa de 
+                uma simples organização de numerais que recebem um toque 
+                de lógica matemática. Mas o que faz dessa ordem de números,
+                 uma descoberta especial, é a sua ligação com os fenômenos
+                  da natureza e o valor aproximado da constante 1,6, quociente
+                   da divisão entre um número e seu antecessor na
+                    sequência, a partir do número 3.</p>
+        </section>
+
+        <h3>Escolha qualquer número inteiro positivo e descubra se pertence ou não a sequência. </h3>
+
+        <form id="form" method="GET" action="/">
+            <div>
+                <label for="number">Digite um número aqui</label>
+                <input type="number"  name="number" id="number" required>
+            </div>
+
+            <button type="submit" >Conferir</button>
+            
+        </form>
+        <div id="result"></div>
+    </div>
+    
+    <script src="./questao2.js" ></script>
+</body>
+</html>
