@@ -122,51 +122,53 @@ const data = [
 	}
 ]
 
+/*3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
+• O menor valor de faturamento ocorrido em um dia do mês;
+• O maior valor de faturamento ocorrido em um dia do mês;
+• Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+
+IMPORTANTE:
+a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
+b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média;*/
+
+// ********* Valor menor *******************
+
+const minValue = data.reduce(function(prev, current) { 	
+	if (prev.valor < current.valor && prev.valor > 0 ) {
+	 return	prev
+	} else {
+		return current
+	}	
+				 
+});
+
+// ********* Valor Maior *******************
+
 const maxValue = data.reduce(function(prev, current) { 	
 	return prev.valor > current.valor ? prev : current; 
 });
 
-const minValue = data.reduce(function(prev, current) { 		
-		return prev.valor < current.valor ? prev : current;		 
-});
-
-console.log(maxValue.valor);
-console.log(minValue.valor);
-
-/*
-let dias = data.map(dia => dia.dia)
+//  ********* Média mensal sem dias de faturamento *******************
 let valores = data.map(valores => valores.valor)
+valores = valores.filter(item => item > 0);
 
-let maiorValor = 0
+let soma = 0
 
-
-for (let i= 0; i < valores.length; i++){
-
-    let valor = valores[i]
-
-    if (valor > maiorValor ) {
-        maiorValor = valor
-    }
-     
+for (let i = 0; i < valores.length; i++) {
+	let valor = valores[i]
+	soma = soma + valor
+	
 }
 
-console.log(maiorValor);
+let media = soma / valores.length
+console.log(media)
 
-*/
-/*
-let valores = data.map(valores => valores.valor)
+// ********* Números de dias dos valores superiores a média  ******************
+valores = valores.filter(item => item > media);
+console.log(valores.length)
 
-let posicao_maior = 0
-let posicao_menor = 0
+console.log(`O Menor valor ocorrido no mês foi: ${minValue.valor}`)
+console.log(`O Maior valor ocorrido no mês foi: ${maxValue.valor}`);
+console.log(`Os números de dias que valores são superiores a média: ${valores.length}`);
 
-for (let i =1; i < valores.length; i++ ) {
-	if (valores[i] > valores[posicao_maior]) {
-		posicao_maior = i
-	}else if (valores[i] < valores[posicao_menor]) {
-		posicao_menor = i 
-	}
-}
 
-console.log(`Maior elemento: ${valores[posicao_maior]} (i: ${posicao_maior}) `)
-console.log(`Menor elemento: ${valores[posicao_menor]} (i: ${posicao_menor}) `)
-*/
